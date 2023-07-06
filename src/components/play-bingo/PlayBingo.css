@@ -1,0 +1,13 @@
+.bingo-button {
+    border: none;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    border-radius: 0;
+    color: #8064A2;
+    background-color: white;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #8064A2 !important;
+}

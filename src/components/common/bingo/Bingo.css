@@ -1,0 +1,13 @@
+.bingo-body{
+    display:grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px;
+    justify-content: center;
+}
+
+.bingo-cell{
+    border: 1px solid #8064A2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

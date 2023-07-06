@@ -1,0 +1,24 @@
+select#sel1 {
+    border: none;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    border-radius: 0;
+    color: #8064A2;
+    
+}
+select {
+    /* for Firefox */
+    -moz-appearance: none;
+    /* for Chrome */
+    -webkit-appearance: none;
+  }
+  
+select#sel1:hover{
+    background-color: #8064A2;
+    color: white;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #8064A2 !important;
+}
