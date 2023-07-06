@@ -23,16 +23,17 @@ const CreateBingo: React.FC = () => {
       }, []);
     
 
-    const handleChange = (event: React.ChangeEvent<HTMLSelectElement>, key: string) => {
-        console.log(event.target.value)
-
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>, key: string) => {
         let update: any = {}
-        update[parseInt(key)] = Number(event.target.value)
+        if(!!Number(event.target.value)){
+            update[parseInt(key)]=Number(event.target.value)
+        }else{
+            update[parseInt(key)] = event.target.value
+        }
         setBingoContents({...bingoContents, ...update})
 
         const newRemain = getRemains(Object.values({...bingoContents, ...update}));
         setRemains(newRemain)
-        console.log(newRemain)
     };
 
     const getRemains = (currentContent: number[]): number[] =>{
@@ -46,11 +47,7 @@ const CreateBingo: React.FC = () => {
                 <div className="bingo-body">
                 { Object.entries(bingoContents).map( ([key, content]) => (
                     <div className="bingo-cell" key={key}>
-                        <select id="sel1" key={key} value={content} onChange={(e) => handleChange(e, key)}>
-                            {options.map(num => (
-                                <option key={num+content} value={num}>{num}</option>
-                            ))}
-                        </select>
+                        <input id="sel1" key={key} value={content} onChange={(e) => handleChange(e, key)} />
                     </div>
                 ))}
                 </div>

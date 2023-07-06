@@ -30,7 +30,6 @@ const PlayBingo: React.FC = () => {
         const index = parseInt(key)
         let update: any = {}
         update[index] = isClickeds[index as BingoId ] === 0 ? 1: 0
-        console.log(isClickeds[index as BingoId ] )
         setIsClickeds({...isClickeds, ...update})
     }
     
